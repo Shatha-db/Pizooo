@@ -4,6 +4,8 @@ node_modules/
 .env.*
 !.env.example
 !.env.*.example
+!backend/.env
+!frontend/.env
 .vercel
 .DS_Store
 npm-debug.log*
