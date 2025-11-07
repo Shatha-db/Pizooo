@@ -8,7 +8,6 @@ node_modules/
 .DS_Store
 npm-debug.log*
 yarn-error.log*
-yarn-debug.log*
 .parcel-cache/
 .next/
 dist/
@@ -18,17 +17,20 @@ coverage/
 **/.turbo
 **/.expo
 
-# CRA / Vite specific
+# Additional patterns
+yarn-debug.log*
+pnpm-lock.yaml
+.pnpm-store/
+.eslintcache
 *.local
 *.tsbuildinfo
-.eslintcache
 
-# Editors / IDEs
+# Editors
 .vscode/
 .idea/
 *.swp
 
-# System files
+# System
 Thumbs.db
 
 # Emergent
@@ -38,7 +40,7 @@ Thumbs.db
 *.pem
 *.key
 
-# Python / FastAPI
+# Python
 __pycache__/
 *.py[cod]
 *.pyo
@@ -52,9 +54,10 @@ poetry.lock
 .uv/
 .coverage
 htmlcov/
+
+# Documentation with secrets (prevent future issues)
+**/TWILIO_*.md
+**/API_KEYS*.md
+**/SECRETS*.md
 frontend/node_modules/.cache/default-development/11.pack
 frontend/node_modules/.cache/default-development/0.pack
--e 
-# Environment files
-*.env
-*.env.*
