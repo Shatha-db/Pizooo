@@ -1,46 +1,44 @@
-# --- Node / React ---
+# Node / React / Monorepo
 node_modules/
+.env
+.env.*
+!.env.example
+!.env.*.example
+.vercel
+.DS_Store
 npm-debug.log*
-yarn-debug.log*
 yarn-error.log*
-pnpm-lock.yaml
-.pnpm-store/
+yarn-debug.log*
+.parcel-cache/
+.next/
 dist/
 build/
-.cache/
 coverage/
-.eslintcache
+**/.cache
+**/.turbo
+**/.expo
 
-# CRA / Vite / Webpack artifacts
+# CRA / Vite specific
 *.local
 *.tsbuildinfo
+.eslintcache
 
-# --- Editors / IDEs ---
+# Editors / IDEs
 .vscode/
 .idea/
 *.swp
 
-# --- System files ---
-.DS_Store
+# System files
 Thumbs.db
 
-# --- Emergent / Vercel ---
+# Emergent
 .emergent/
-.vercel/
 
-# --- Secrets (keep only .env.example) ---
-.env
-.env.*
-*.env
+# Secrets
 *.pem
 *.key
 
-# Specific env files
-backend/.env
-packages/backend/.env
-frontend/.env
-
-# --- Python / FastAPI ---
+# Python / FastAPI
 __pycache__/
 *.py[cod]
 *.pyo
@@ -56,11 +54,3 @@ poetry.lock
 htmlcov/
 frontend/node_modules/.cache/default-development/11.pack
 frontend/node_modules/.cache/default-development/0.pack
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
