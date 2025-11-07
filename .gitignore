@@ -1,137 +1,58 @@
-# Pizoo Dating App - .gitignore
-
-# Dependencies
+# --- Node / React ---
 node_modules/
-/.pnp
-.pnp.js
-
-# Testing
-/coverage
-
-# Production builds
-/build
-/dist
-frontend/build/
-backend/__pycache__/
-
-# Environment files
-.env
-.env.local
-.env.development
-.env.test
-.env.production.local
-backend/.env.backup*
-
-# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-*.log
+pnpm-lock.yaml
+.pnpm-store/
+dist/
+build/
+.cache/
+coverage/
+.eslintcache
 
-# OS files
+# CRA / Vite / Webpack artifacts
+*.local
+*.tsbuildinfo
+
+# --- Editors / IDEs ---
+.vscode/
+.idea/
+*.swp
+
+# --- System files ---
 .DS_Store
-*.pem
 Thumbs.db
 
-# IDE
-.idea/
-.vscode/
+# --- Emergent / Vercel ---
+.emergent/
+.vercel/
 
-# Python
+# --- Secrets (keep only .env.example) ---
+.env
+.env.*
+*.env
+*.pem
+*.key
+
+# Specific env files
+backend/.env
+packages/backend/.env
+frontend/.env
+
+# --- Python / FastAPI ---
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
+*.so
+.mypy_cache/
+.pytest_cache/
 .venv/
 venv/
-
-# Caches
-.cache/
-.ruff_cache/
-frontend/node_modules/.cache/
-
-# Deployment
-.vercel
-
-# Archives
-archive/
-
-# Don't ignore example files
-!.env.example
-!backend/.env.example
+poetry.lock
+.uv/
+.coverage
+htmlcov/
 frontend/node_modules/.cache/default-development/11.pack
 frontend/node_modules/.cache/default-development/0.pack
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
