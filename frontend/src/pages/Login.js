@@ -62,7 +62,7 @@ const Login = () => {
       
       // Check if user has a profile
       try {
-        const profileResponse = await axios.get(`${BACKEND_URL}/api/profile/me`, {
+        const profileResponse = await axios.get(`${API}/profile/me`, {
           headers: {
             Authorization: `Bearer ${result.token}`
           }
