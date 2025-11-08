@@ -76,7 +76,7 @@ const Register = () => {
       try {
         const token = localStorage.getItem('token');
         const currentLanguage = i18n.language;
-        await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/user/language`, {
+        await fetch(`${API_BASE_URL}/user/language`, {
           method: 'PUT',
           headers: {
             'Authorization': `Bearer ${token}`,
