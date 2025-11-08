@@ -270,6 +270,21 @@ backend:
         comment: "✅ LIVEKIT FULLY CONFIGURED AND TESTED: All credentials present (URL: wss://pizoo-app-2jxoavwx.livekit.cloud, API_KEY: APIRRhiN..., API_SECRET: uTCoakce...). Token generation working perfectly with verified users. Tested end-to-end: created verified user via email verification, generated LiveKit token successfully. Token format is valid JWT (425 chars). Rate limiting working (30/hour). Endpoint correctly requires verified=true status. Response format includes all required fields: success, token, url, room_name, participant_identity."
 
 frontend:
+  - task: "API URL Centralization - Fix Double-Slash Issue"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/config/api.js + 42 files updated"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: false
+        agent: "user"
+        comment: "User reported double-slash in API URLs (e.g., //api/auth/login) causing CORS errors and failed requests from pizoo.ch deployment."
+      - working: true
+        agent: "main"
+        comment: "✅ COMPREHENSIVE FIX: Created centralized /app/frontend/src/config/api.js that strips trailing slashes from REACT_APP_BACKEND_URL and exports API_BASE_URL. Updated 42 files across pages/, components/, modules/, context/, utils/ to import from centralized config. Patterns fixed: 'const BACKEND_URL = process.env.REACT_APP_BACKEND_URL' → import { BACKEND_URL } from config; '${BACKEND_URL}/api' → '${API_BASE_URL}'; '${process.env.REACT_APP_BACKEND_URL}/api' → '${API_BASE_URL}'. Fixed import path in App.js ('./config/api' not '../config/api'). Frontend compiled successfully. Files updated: AuthContext.js, Login.js, Register.js, App.js, all pages, components (LiveKitCall, LanguageSelector, LocationPermissionRequest, ReportBlock), all modules (chat, call, i18n, otp, premium, safety), context (WebSocket, Notification, Theme), utils (imageUpload). User must now: 1) Use 'Save to GitHub' to push to Shatha-db/Pizooo. 2) Set REACT_APP_BACKEND_URL=https://pizooo-backend.onrender.com (NO trailing slash) in Vercel env vars. 3) Redeploy Vercel with cache cleared."
+
   - task: "Language Selector - Complete 9 Languages"
     implemented: true
     working: true
