@@ -11,6 +11,7 @@ import { Phone, Globe, Eye, EyeOff } from 'lucide-react';
 import Wordmark from '../components/branding/Wordmark';
 import CountryCodeSelect from '../components/CountryCodeSelect';
 import { useTranslation } from 'react-i18next';
+import { API_BASE_URL } from '../config/api';
 
 const Register = () => {
   const navigate = useNavigate();
