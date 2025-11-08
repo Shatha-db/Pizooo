@@ -2,68 +2,81 @@ name: Deploy to Vercel Production
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
   deploy:
     name: Trigger Vercel Deployment
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-      
+        uses: actions/checkout@v4
+
+      - name: Install jq (for JSON parsing)
+        run: sudo apt-get update && sudo apt-get install -y jq
+
       - name: Trigger Vercel Deploy Hook
+        env:
+          HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
         run: |
+          if [ -z "$HOOK_URL" ]; then
+            echo "::error::VERCEL_DEPLOY_HOOK_URL secret is missing"
+            exit 1
+          fi
+
           echo "🚀 Triggering Vercel deployment..."
-          RESPONSE=$(curl -X POST \
-            "https://api.vercel.com/v1/integrations/deploy/prj_8ZKPw4z3kOreyIVPywFD4OE3EdxJ/2im8oZHyQW" \
-            -H "Content-Type: application/json" \
-            -s)
-          
-          echo "Response: $RESPONSE"
-          
-          JOB_ID=$(echo $RESPONSE | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4)
-          
+          # احصل على كود الحالة + احفظ الرد في ملف
+          HTTP_CODE=$(curl -sS -o response.json -w "%{http_code}" -X POST "$HOOK_URL" -H "Content-Type: application/json")
+
+          echo "HTTP: $HTTP_CODE"
+          echo "Response:"
+          cat response.json
+
+          if [ "$HTTP_CODE" -lt 200 ] || [ "$HTTP_CODE" -ge 300 ]; then
+            echo "::error::Vercel hook returned HTTP $HTTP_CODE"
+            exit 1
+          fi
+
+          # استخرج الـJob ID بشكل آمن (إن وُجد)
+          JOB_ID=$(jq -r '.job.id // empty' response.json)
           if [ -n "$JOB_ID" ]; then
             echo "✅ Deployment triggered successfully"
             echo "Job ID: $JOB_ID"
             echo "::notice::Vercel deployment started with Job ID: $JOB_ID"
           else
-            echo "❌ Failed to trigger deployment"
-            echo "::error::Deployment trigger failed"
-            exit 1
+            echo "⚠️ No job.id in response (may still be fine if Vercel accepted the hook)"
           fi
-      
-      - name: Wait for deployment
+
+      - name: Wait for deployment to start
         run: |
-          echo "⏳ Waiting 90 seconds for deployment to start..."
-          sleep 90
-      
-      - name: Verify deployment
+          echo "⏳ Waiting ~60s..."
+          sleep 60
+
+      - name: Quick verify public URLs
+        env:
+          PROD_URL: ${{ secrets.PROD_URL }}
+          WWW_URL:  ${{ secrets.WWW_URL }}
+          FALLBACK: ${{ secrets.FALLBACK_URL }}
         run: |
-          echo "🔍 Verifying deployment..."
-          
-          # Check pizoo.ch
-          STATUS_1=$(curl -s -o /dev/null -w "%{http_code}" https://pizoo.ch)
-          echo "pizoo.ch status: $STATUS_1"
-          
-          # Check www.pizoo.ch
-          STATUS_2=$(curl -s -o /dev/null -w "%{http_code}" https://www.pizoo.ch)
-          echo "www.pizoo.ch status: $STATUS_2"
-          
-          if [ "$STATUS_1" = "200" ] || [ "$STATUS_1" = "301" ]; then
-            echo "✅ pizoo.ch is accessible"
-          else
-            echo "⚠️ pizoo.ch returned status: $STATUS_1"
-          fi
-          
-          if [ "$STATUS_2" = "200" ] || [ "$STATUS_2" = "301" ]; then
-            echo "✅ www.pizoo.ch is accessible"
-          else
-            echo "⚠️ www.pizoo.ch returned status: $STATUS_2"
-          fi
-          
-          echo "::notice::Deployment verification completed"
+          check_url () {
+            URL="$1"
+            if [ -n "$URL" ]; then
+              CODE=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
+              echo "$URL -> $CODE"
+              # بعض المواقع ممكن ترجع 200/301/302/308 حسب إعادة التوجيه أو CDN
+              if [ "$CODE" = "200" ] || [ "$CODE" = "301" ] || [ "$CODE" = "302" ] || [ "$CODE" = "308" ]; then
+                echo "OK: $URL"
+              else
+                echo "WARN: $URL returned $CODE"
+              fi
+            fi
+          }
+
+          echo "🔍 Checking public URLs (if provided as secrets):"
+          check_url "$PROD_URL"
+          check_url "$WWW_URL"
+          check_url "$FALLBACK"
+
+          echo "::notice::Quick verification step completed"
