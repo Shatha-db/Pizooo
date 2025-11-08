@@ -197,6 +197,21 @@ user_problem_statement: |
   6. Migration: Set existing users to verified=false
 
 backend:
+  - task: "CORS Configuration for Production Domains"
+    implemented: true
+    working: true
+    file: "/app/backend/.env, /app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: false
+        agent: "user"
+        comment: "User reported CORS errors blocking authentication from pizoo.ch. Backend was set to allow_origins='*' but specific domains needed for production security."
+      - working: true
+        agent: "main"
+        comment: "✅ Updated backend/.env CORS_ORIGINS to: https://pizoo.ch,https://www.pizoo.ch,https://pizooo.vercel.app. Backend server.py (line 4767) reads this and applies to CORSMiddleware. Backend service restarted successfully. User must now deploy to Render with these settings."
+
   - task: "Image Upload with Cloudinary Integration"
     implemented: true
     working: true
