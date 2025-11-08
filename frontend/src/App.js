@@ -43,9 +43,8 @@ import CustomLogoPage from './pages/CustomLogoPage';
 import { Toaster } from './components/ui/sonner';
 import { useTranslation } from 'react-i18next';
 import Loader from './components/Loader';
+import { API_BASE_URL, BACKEND_URL } from '../config/api';
 import './App.css';
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 function AppRoot() {
   const { i18n } = useTranslation();

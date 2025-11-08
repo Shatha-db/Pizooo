@@ -3,8 +3,7 @@ import { Device } from '@twilio/voice-sdk';
 import { Phone, PhoneOff } from 'lucide-react';
 import { toast } from 'sonner';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-
+import { API_BASE_URL, BACKEND_URL } from '../../config/api';
 export default function VoiceCallButton({ calleeId, identity }) {
   const [device, setDevice] = useState(null);
   const [connection, setConnection] = useState(null);

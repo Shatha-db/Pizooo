@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 
-const API = process.env.REACT_APP_BACKEND_URL || '';
+import { API_BASE_URL, BACKEND_URL } from '../config/api';
+const API = BACKEND_URL || '';
 
 /**
  * LanguageGuard: Ensures user's preferred language is loaded and applied

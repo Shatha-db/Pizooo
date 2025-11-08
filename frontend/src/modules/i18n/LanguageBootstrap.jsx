@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-
+import { API_BASE_URL, BACKEND_URL } from '../../config/api';
 export default function LanguageBootstrap() {
   const { i18n } = useTranslation();
   

@@ -3,8 +3,7 @@ import Video from 'twilio-video';
 import { Video as VideoIcon, VideoOff, Mic, MicOff } from 'lucide-react';
 import { toast } from 'sonner';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-
+import { API_BASE_URL, BACKEND_URL } from '../../config/api';
 export default function VideoCallButton({ roomName, identity }) {
   const [room, setRoom] = useState(null);
   const [isConnecting, setIsConnecting] = useState(false);

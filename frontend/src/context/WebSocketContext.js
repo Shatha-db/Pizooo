@@ -1,9 +1,8 @@
 import React, { createContext, useContext, useEffect, useState, useRef } from 'react';
 import { useAuth } from './AuthContext';
 
+import { API_BASE_URL, BACKEND_URL } from '../config/api';
 const WebSocketContext = createContext(null);
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 // Validate backend URL
 if (!BACKEND_URL) {

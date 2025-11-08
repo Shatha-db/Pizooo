@@ -6,8 +6,8 @@ import { Heart, X, User, MapPin, Briefcase, Sparkles, Star } from 'lucide-react'
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { API_BASE_URL, BACKEND_URL } from '../config/api';
+const API = API_BASE_URL;
 
 const Discover = () => {
   const { token, logout } = useAuth();

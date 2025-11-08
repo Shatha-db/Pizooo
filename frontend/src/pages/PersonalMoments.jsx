@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useAuth } from '../context/AuthContext';
 import PersonalCard from '../modules/personal/PersonalCard';
 import BottomNav from '../components/BottomNav';
+import { API_BASE_URL, BACKEND_URL } from '../config/api';
 import '../styles/personal.css';
 
 const PersonalMoments = () => {
@@ -19,7 +20,7 @@ const PersonalMoments = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const backendUrl = process.env.REACT_APP_BACKEND_URL || '';
+      const backendUrl = BACKEND_URL || '';
       
       const response = await fetch(`${backendUrl}/api/personal/list`, {
         headers: {

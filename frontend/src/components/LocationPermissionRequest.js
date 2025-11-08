@@ -3,8 +3,7 @@ import { MapPin, X } from 'lucide-react';
 import { Button } from './ui/button';
 import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-
+import { API_BASE_URL, BACKEND_URL } from '../config/api';
 const LocationPermissionRequest = ({ onClose, token }) => {
   const [requesting, setRequesting] = useState(false);
 

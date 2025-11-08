@@ -9,7 +9,8 @@ import { Label } from '../components/ui/label';
 import CustomLogo from '../components/CustomLogo';
 import LanguageSelector from '../modules/i18n/LanguageSelector';
 
-const API = process.env.REACT_APP_BACKEND_URL || '';
+import { API_BASE_URL, BACKEND_URL } from '../config/api';
+const API = BACKEND_URL || '';
 
 export default function PhoneLogin() {
   const { t } = useTranslation(['auth']);

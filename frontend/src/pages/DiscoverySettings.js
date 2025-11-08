@@ -13,6 +13,7 @@ import { debounce } from 'lodash';
 import { COUNTRY_CENTERS, DEFAULT_CENTER, DEFAULT_RADIUS } from '../utils/countryCenters';
 import UserBottomSheet from '../components/UserBottomSheet';
 
+import { API_BASE_URL, BACKEND_URL } from '../config/api';
 // Fix for default marker icon in React Leaflet
 if (typeof L !== 'undefined' && L.Icon && L.Icon.Default) {
   delete L.Icon.Default.prototype._getIconUrl;
@@ -86,8 +87,7 @@ const getCurrentUserIcon = () => {
   });
 };
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+const API = API_BASE_URL;
 
 // Safe radius parser to prevent NaN
 const parseRadius = (val) => {
