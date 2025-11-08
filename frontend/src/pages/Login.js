@@ -13,8 +13,9 @@ import CountryCodeSelect from '../components/CountryCodeSelect';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from '../modules/i18n/LanguageSelector';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = API_BASE_URL;
 
 const Login = () => {
   const navigate = useNavigate();
