@@ -182,7 +182,13 @@
 #====================================================================================================
 
 user_problem_statement: |
-  Implement one-time account verification system to replace per-call OTP codes:
+  CURRENT TASK: Fix Auth (CORS + Backend URL) & Redeploy
+  - Fix frontend API client to prevent double-slash in URLs (e.g., //api/auth/login)
+  - Update backend CORS to allow pizoo.ch, www.pizoo.ch, pizooo.vercel.app
+  - Use existing GitHub repo (Shatha-db/Pizooo) and deployments (Vercel: pizooo, Render: pizooo-backend)
+  - Do NOT create new deployments
+  
+  PREVIOUS COMPLETED: One-time account verification system to replace per-call OTP codes:
   1. Database: Add verified (bool), verified_method, verified_at fields to User model
   2. Auth APIs: Google OAuth (Emergent), Email Magic Link (15-min TTL), Phone OTP (Telnyx - later)
   3. JWT: Access token (1h) + Refresh token (7d)
