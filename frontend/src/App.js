@@ -43,7 +43,7 @@ import CustomLogoPage from './pages/CustomLogoPage';
 import { Toaster } from './components/ui/sonner';
 import { useTranslation } from 'react-i18next';
 import Loader from './components/Loader';
-import { API_BASE_URL, BACKEND_URL } from '../config/api';
+import { API_BASE_URL, BACKEND_URL } from './config/api';
 import './App.css';
 
 function AppRoot() {
