@@ -3,7 +3,8 @@
  * Manages profile views and likes limits for free users
  */
 
-|| '';
+import { API_BASE_URL } from '../../config/api';
+
 const API = API_BASE_URL;
 
 /**
