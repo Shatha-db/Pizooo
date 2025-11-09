@@ -182,7 +182,13 @@
 #====================================================================================================
 
 user_problem_statement: |
-  CURRENT TASK: Fix Auth (CORS + Backend URL) & Redeploy
+  CURRENT TASK: Google Indexation Setup & SEO Enhancement
+  - Generate robots.txt and sitemap.xml for pizoo.ch
+  - Enhance index.html with comprehensive SEO meta tags
+  - Submit sitemap to Google Search Console
+  - Ensure Google visibility and crawlability
+  
+  PREVIOUS COMPLETED: Fix Auth (CORS + Backend URL) & Redeploy
   - Fix frontend API client to prevent double-slash in URLs (e.g., //api/auth/login)
   - Update backend CORS to allow pizoo.ch, www.pizoo.ch, pizooo.vercel.app
   - Use existing GitHub repo (Shatha-db/Pizooo) and deployments (Vercel: pizooo, Render: pizooo-backend)
