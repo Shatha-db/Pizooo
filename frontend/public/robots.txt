@@ -1,0 +1,45 @@
+# robots.txt for pizoo.ch - Pizoo Dating App
+# Generated: 2025-11-08
+# Purpose: Control search engine crawling and indexing
+
+# Allow all search engines to crawl public pages
+User-agent: *
+
+# Public pages (allow indexing)
+Allow: /
+Allow: /login
+Allow: /register
+Allow: /terms
+Allow: /privacy
+Allow: /cookies
+Allow: /community
+Allow: /safety
+
+# Protected pages (disallow indexing - require authentication)
+Disallow: /home
+Disallow: /discover
+Disallow: /swipe
+Disallow: /explore
+Disallow: /personal
+Disallow: /top-picks
+Disallow: /discovery-settings
+Disallow: /discovery
+Disallow: /double-dating
+Disallow: /double-dating-info
+Disallow: /likes
+Disallow: /likes-you
+Disallow: /matches
+Disallow: /profile
+Disallow: /chat
+Disallow: /notifications
+Disallow: /premium
+Disallow: /settings
+Disallow: /add-payment
+Disallow: /phone-login
+
+# Admin/Internal pages
+Disallow: /custom-logo
+Disallow: /dashboard
+
+# Sitemap location
+Sitemap: https://pizoo.ch/sitemap.xml

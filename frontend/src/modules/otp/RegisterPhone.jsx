@@ -4,7 +4,8 @@ import { useTranslation } from "react-i18next";
 import CountryCodeSelector from "../../components/CountryCodeSelector";
 import { COUNTRY_CODES } from "../../utils/countryCodes";
 
-const API = process.env.REACT_APP_BACKEND_URL || '';
+import { API_BASE_URL, BACKEND_URL } from '../../config/api';
+const API = BACKEND_URL || '';
 
 export default function RegisterPhone({ onClose }){
   const { t } = useTranslation(['auth', 'common']);

@@ -11,8 +11,8 @@ import { ArrowRight, Camera, X, Plus, Check, AlertCircle, Loader2, Star } from '
 import axios from 'axios';
 import { uploadImage } from '../utils/imageUpload';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { API_BASE_URL, BACKEND_URL } from '../config/api';
+const API = API_BASE_URL;
 
 const EditProfile = () => {
   const navigate = useNavigate();

@@ -11,6 +11,7 @@ import LocationPermissionRequest from '../components/LocationPermissionRequest';
 import GeoPermissionModal from '../components/GeoPermissionModal';
 import { Heart, X, Star, RotateCcw, Zap, Info, Bell } from 'lucide-react';
 import axios from 'axios';
+import { API_BASE_URL, BACKEND_URL } from '../config/api';
 import { 
   getCurrentPosition, 
   reverseGeocode, 
@@ -20,8 +21,7 @@ import {
 } from '../utils/geoUtils';
 import '../styles/home-cta.css';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+const API = API_BASE_URL;
 
 const Home = () => {
   const navigate = useNavigate();

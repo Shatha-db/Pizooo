@@ -3,8 +3,9 @@
  * Manages profile views and likes limits for free users
  */
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || '';
-const API = `${BACKEND_URL}/api`;
+import { API_BASE_URL } from '../../config/api';
+
+const API = API_BASE_URL;
 
 /**
  * Fetch user's current usage context

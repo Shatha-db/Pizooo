@@ -8,8 +8,8 @@ import BottomNav from '../components/BottomNav';
 import { Settings, Edit, LogOut, Heart, Star, Users, Shield, X } from 'lucide-react';
 import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { API_BASE_URL, BACKEND_URL } from '../config/api';
+const API = API_BASE_URL;
 
 const Profile = () => {
   const navigate = useNavigate();

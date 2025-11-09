@@ -7,8 +7,8 @@ import { X, Users, Settings, Heart, MessageCircle, Share2, Trash2 } from 'lucide
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { API_BASE_URL, BACKEND_URL } from '../config/api';
+const API = API_BASE_URL;
 
 const DoubleDating = () => {
   const navigate = useNavigate();

@@ -8,8 +8,7 @@ import { X, PhoneOff } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-
+import { API_BASE_URL, BACKEND_URL } from '../../config/api';
 export default function LiveKitCallModal({ matchId, type = 'video', onClose }) {
   const { t } = useTranslation(['chat', 'common']);
   const [connectionState, setConnectionState] = useState('connecting'); // connecting, connected, failed

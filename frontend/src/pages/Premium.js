@@ -7,8 +7,8 @@ import { Card } from '../components/ui/card';
 import { ArrowRight, Check, Zap, Star, Crown } from 'lucide-react';
 import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { API_BASE_URL, BACKEND_URL } from '../config/api';
+const API = API_BASE_URL;
 
 const Premium = () => {
   const navigate = useNavigate();

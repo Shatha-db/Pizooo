@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { API_BASE_URL, BACKEND_URL } from '../../config/api';
 export default function SafetyConsentModal({ open, onAccept, onClose }) {
   const { t } = useTranslation(['chat']);
   if (!open) return null;
@@ -8,7 +9,7 @@ export default function SafetyConsentModal({ open, onAccept, onClose }) {
   const accept = async () => {
     try {
       localStorage.setItem('pizoo_safety_accepted', '1');
-      await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/user/settings`, {
+      await fetch(`${API_BASE_URL}/user/settings`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',

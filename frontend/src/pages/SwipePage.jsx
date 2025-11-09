@@ -5,8 +5,7 @@ import { motion } from 'framer-motion';
 import SwipeDeck from '../modules/swipe/SwipeDeck';
 import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-
+import { API_BASE_URL, BACKEND_URL } from '../config/api';
 export default function SwipePage() {
   const { token } = useAuth();
   const navigate = useNavigate();

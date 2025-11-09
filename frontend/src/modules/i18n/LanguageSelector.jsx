@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { API_BASE_URL, BACKEND_URL } from '../../config/api';
 const LANGUAGE_OPTIONS = [
   { code: 'en', label: 'English', flag: '🇬🇧' },
   { code: 'ar', label: 'العربية', flag: '🇸🇦' },
@@ -31,7 +32,7 @@ export default function LanguageSelector({ variant = 'default' }) {
       // Sync with backend
       const token = localStorage.getItem('token');
       if (token) {
-        await fetch(`${process.env.REACT_APP_BACKEND_URL || ''}/api/user/language`, {
+        await fetch(`${BACKEND_URL || ''}/api/user/language`, {
           method: 'PUT',
           credentials: 'include',
           headers: {

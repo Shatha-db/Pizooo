@@ -182,7 +182,19 @@
 #====================================================================================================
 
 user_problem_statement: |
-  Implement one-time account verification system to replace per-call OTP codes:
+  CURRENT TASK: Google Indexation Setup & SEO Enhancement
+  - Generate robots.txt and sitemap.xml for pizoo.ch
+  - Enhance index.html with comprehensive SEO meta tags
+  - Submit sitemap to Google Search Console
+  - Ensure Google visibility and crawlability
+  
+  PREVIOUS COMPLETED: Fix Auth (CORS + Backend URL) & Redeploy
+  - Fix frontend API client to prevent double-slash in URLs (e.g., //api/auth/login)
+  - Update backend CORS to allow pizoo.ch, www.pizoo.ch, pizooo.vercel.app
+  - Use existing GitHub repo (Shatha-db/Pizooo) and deployments (Vercel: pizooo, Render: pizooo-backend)
+  - Do NOT create new deployments
+  
+  PREVIOUS COMPLETED: One-time account verification system to replace per-call OTP codes:
   1. Database: Add verified (bool), verified_method, verified_at fields to User model
   2. Auth APIs: Google OAuth (Emergent), Email Magic Link (15-min TTL), Phone OTP (Telnyx - later)
   3. JWT: Access token (1h) + Refresh token (7d)
@@ -191,6 +203,21 @@ user_problem_statement: |
   6. Migration: Set existing users to verified=false
 
 backend:
+  - task: "CORS Configuration for Production Domains"
+    implemented: true
+    working: true
+    file: "/app/backend/.env, /app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: false
+        agent: "user"
+        comment: "User reported CORS errors blocking authentication from pizoo.ch. Backend was set to allow_origins='*' but specific domains needed for production security."
+      - working: true
+        agent: "main"
+        comment: "✅ Updated backend/.env CORS_ORIGINS to: https://pizoo.ch,https://www.pizoo.ch,https://pizooo.vercel.app. Backend server.py (line 4767) reads this and applies to CORSMiddleware. Backend service restarted successfully. User must now deploy to Render with these settings."
+
   - task: "Image Upload with Cloudinary Integration"
     implemented: true
     working: true
@@ -249,6 +276,36 @@ backend:
         comment: "✅ LIVEKIT FULLY CONFIGURED AND TESTED: All credentials present (URL: wss://pizoo-app-2jxoavwx.livekit.cloud, API_KEY: APIRRhiN..., API_SECRET: uTCoakce...). Token generation working perfectly with verified users. Tested end-to-end: created verified user via email verification, generated LiveKit token successfully. Token format is valid JWT (425 chars). Rate limiting working (30/hour). Endpoint correctly requires verified=true status. Response format includes all required fields: success, token, url, room_name, participant_identity."
 
 frontend:
+  - task: "Google Indexation Setup - SEO Files & Meta Tags"
+    implemented: true
+    working: true
+    file: "/app/frontend/public/robots.txt, /app/frontend/public/sitemap.xml, /app/frontend/public/index.html"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: false
+        agent: "user"
+        comment: "User requested Google Search Console verification, robots.txt, sitemap.xml generation, and submission for pizoo.ch domain to ensure full Google Search visibility."
+      - working: true
+        agent: "main"
+        comment: "✅ COMPREHENSIVE SEO SETUP COMPLETED: 1) Created robots.txt (951 bytes) with Allow rules for 8 public pages (/login, /register, /terms, /privacy, /cookies, /community, /safety) and Disallow rules for protected routes. 2) Generated sitemap.xml (4.8 KB) with 8 public URLs, proper XML schema, hreflang tags for 9 languages (en, ar, de, fr, es, it, pt-BR, ru, tr), priority hierarchy (1.0 for homepage, 0.9 for login/register, 0.5-0.7 for legal pages), and changefreq specifications. 3) Enhanced index.html with 40+ SEO meta tags: Extended description (155 chars), Keywords, Author, Robots directive, Canonical URL (https://pizoo.ch/), 18 Open Graph tags (including locale variants for CH, FR, AR), 6 Twitter Card tags, Geographic tags (CH - Switzerland), Mobile/PWA tags. 4) Frontend service restarted successfully. Next steps for user: Deploy to production via 'Save to GitHub' → Vercel auto-deploy, Submit sitemap to Google Search Console (https://search.google.com/search-console → Sitemaps → Add 'sitemap.xml'), Request indexing for top 5 pages using URL Inspection tool, Monitor Coverage Report after 7 days. Documentation generated: /app/GOOGLE_INDEXATION_REPORT.md (comprehensive guide), /app/SEO_DEPLOYMENT_CHECKLIST.md (step-by-step checklist). Expected timeline: First crawl 2-7 days, Initial indexing 1-2 weeks, Full indexing 2-4 weeks."
+
+  - task: "API URL Centralization - Fix Double-Slash Issue"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/config/api.js + 42 files updated"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: false
+        agent: "user"
+        comment: "User reported double-slash in API URLs (e.g., //api/auth/login) causing CORS errors and failed requests from pizoo.ch deployment."
+      - working: true
+        agent: "main"
+        comment: "✅ COMPREHENSIVE FIX: Created centralized /app/frontend/src/config/api.js that strips trailing slashes from REACT_APP_BACKEND_URL and exports API_BASE_URL. Updated 42 files across pages/, components/, modules/, context/, utils/ to import from centralized config. Patterns fixed: 'const BACKEND_URL = process.env.REACT_APP_BACKEND_URL' → import { BACKEND_URL } from config; '${BACKEND_URL}/api' → '${API_BASE_URL}'; '${process.env.REACT_APP_BACKEND_URL}/api' → '${API_BASE_URL}'. Fixed import path in App.js ('./config/api' not '../config/api'). Frontend compiled successfully. Files updated: AuthContext.js, Login.js, Register.js, App.js, all pages, components (LiveKitCall, LanguageSelector, LocationPermissionRequest, ReportBlock), all modules (chat, call, i18n, otp, premium, safety), context (WebSocket, Notification, Theme), utils (imageUpload). User must now: 1) Use 'Save to GitHub' to push to Shatha-db/Pizooo. 2) Set REACT_APP_BACKEND_URL=https://pizooo-backend.onrender.com (NO trailing slash) in Vercel env vars. 3) Redeploy Vercel with cache cleared."
+
   - task: "Language Selector - Complete 9 Languages"
     implemented: true
     working: true

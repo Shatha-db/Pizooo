@@ -80,7 +80,7 @@ export function resetDayIfNeeded() {
  */
 export async function checkPremiumStatus() {
   try {
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/upsell/context`, {
+    const response = await fetch(`${API_BASE_URL}/upsell/context`, {
       credentials: 'include',
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -102,7 +102,7 @@ export async function checkPremiumStatus() {
  */
 export async function getSuperLikeQuota() {
   try {
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/upsell/context`, {
+    const response = await fetch(`${API_BASE_URL}/upsell/context`, {
       credentials: 'include',
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -125,7 +125,7 @@ export async function getSuperLikeQuota() {
  */
 export async function recordSwipe(profileId, direction) {
   try {
-    await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/swipe`, {
+    await fetch(`${API_BASE_URL}/swipe`, {
       method: 'POST',
       credentials: 'include',
       headers: {

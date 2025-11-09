@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useAuth } from '../context/AuthContext';
 import ExploreRow from '../modules/explore/ExploreRow';
 import BottomNav from '../components/BottomNav';
+import { API_BASE_URL, BACKEND_URL } from '../config/api';
 import '../styles/explore.css';
 
 const ExploreNew = () => {
@@ -19,7 +20,7 @@ const ExploreNew = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const backendUrl = process.env.REACT_APP_BACKEND_URL || '';
+      const backendUrl = BACKEND_URL || '';
       
       const response = await fetch(`${backendUrl}/api/explore/sections`, {
         headers: {
