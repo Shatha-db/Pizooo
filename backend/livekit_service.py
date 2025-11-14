@@ -17,8 +17,8 @@ LIVEKIT_API_SECRET = os.environ.get('LIVEKIT_API_SECRET')
 LIVEKIT_URL = os.environ.get('LIVEKIT_URL')  # Must be set in .env
 
 if not LIVEKIT_URL:
-    logger.warning("⚠️ LIVEKIT_URL not set in environment variables")
-    LIVEKIT_URL = 'wss://pizoo-app-2jxoavwx.livekit.cloud'  # Fallback
+    logger.warning("⚠️ LIVEKIT_URL not set in environment variables. LiveKit features will be disabled.")
+    LIVEKIT_URL = None  # No fallback - will fail gracefully if needed
 
 class LiveKitService:
     """Service for LiveKit token generation and room management"""
