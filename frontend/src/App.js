@@ -256,14 +256,6 @@ function AppRoot() {
                     }
                   />
                   <Route
-                    path="/profile/old"
-                    element={
-                      <ProtectedRoute>
-                        <Profile />
-                      </ProtectedRoute>
-                    }
-                  />
-                  <Route
                     path="/profile/edit"
                     element={
                       <ProtectedRoute>
