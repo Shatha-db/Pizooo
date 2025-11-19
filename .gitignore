@@ -1,0 +1,161 @@
+# Node / React / Monorepo
+node_modules/
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Security: Never commit .env files with secrets
+backend/.env
+frontend/.env
+**/.env
+**/.env.*
+.vercel
+.DS_Store
+npm-debug.log*
+yarn-error.log*
+.parcel-cache/
+.next/
+dist/
+build/
+coverage/
+**/.cache
+**/.turbo
+**/.expo
+
+# Additional patterns
+yarn-debug.log*
+pnpm-lock.yaml
+.pnpm-store/
+.eslintcache
+*.local
+*.tsbuildinfo
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# System
+Thumbs.db
+
+# Emergent
+.emergent/
+
+# Secrets
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.mypy_cache/
+.pytest_cache/
+.venv/
+venv/
+poetry.lock
+.uv/
+.coverage
+htmlcov/
+
+# Documentation with secrets (prevent future issues)
+**/TWILIO_*.md
+**/API_KEYS*.md
+**/SECRETS*.md
+frontend/node_modules/.cache/default-development/11.pack
+frontend/node_modules/.cache/default-development/0.pack
+# Environment files
+*.env
+*.env.*
+# Environment files
+*.env
+*.env.*
+frontend/node_modules/.cache/default-development/1.pack
+# Environment files
+*.env
+*.env.*
+# Environment files
+*.env
+*.env.*
+frontend/node_modules/.cache/default-development/3.pack
+frontend/node_modules/.cache/default-development/2.pack
+frontend/node_modules/.cache/default-development/5.pack
+frontend/node_modules/.cache/default-development/6.pack
+# Environment files
+*.env
+*.env.*
+frontend/node_modules/.cache/default-development/8.pack
+# Environment files
+*.env
+*.env.*
+# Environment files
+*.env
+*.env.*
+# Environment files
+*.env
+*.env.*
+# Environment files
+*.env
+*.env.*
+# Environment files
+*.env
+*.env.*
+# Environment files
+*.env
+*.env.*
+# Environment files
+*.env
+*.env.*
+# Environment files
+*.env
+*.env.*
+# Environment files
+*.env
+*.env.*
+# Environment files
+*.env
+*.env.*
+# Environment files
+*.env
+*.env.*
+# Environment files
+*.env
+*.env.*
+# Environment files
+*.env
+*.env.*
+-e 
+# Environment files
+*.env
+*.env.*
+-e 
+# Environment files
+*.env
+*.env.*
+-e 
+# Environment files
+*.env
+*.env.*
+-e 
+# Environment files
+*.env
+*.env.*
+-e 
+# Environment files
+*.env
+*.env.*
+-e 
+# Environment files
+*.env
+*.env.*
+-e 
+# Environment files
+*.env
+*.env.*
+-e 
+# Environment files
+*.env
+*.env.*
