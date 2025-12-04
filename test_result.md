@@ -414,8 +414,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Verify language selector shows all 9 languages in Register page"
-    - "Verify country code selector has 240+ countries with Popular section in Register and Login"
+    - "Arabic Review Request - Authentication System Testing"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
