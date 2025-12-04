@@ -182,7 +182,14 @@
 #====================================================================================================
 
 user_problem_statement: |
-  CURRENT TASK: Google Indexation Setup & SEO Enhancement
+  CURRENT TASK: اختبار شامل لنظام التسجيل والدخول (Arabic Review Request)
+  - اختبار endpoint التسجيل POST /api/auth/register
+  - اختبار endpoint تسجيل الدخول POST /api/auth/login  
+  - اختبار إعدادات CORS للسماح بـ localhost:3000 و pizoo.ch
+  - اختبار اتصال MongoDB وحفظ البيانات وتشفير كلمات المرور
+  - اختبار حالات الخطأ (تسجيل مكرر، كلمة مرور خاطئة)
+  
+  PREVIOUS COMPLETED: Google Indexation Setup & SEO Enhancement
   - Generate robots.txt and sitemap.xml for pizoo.ch
   - Enhance index.html with comprehensive SEO meta tags
   - Submit sitemap to Google Search Console
