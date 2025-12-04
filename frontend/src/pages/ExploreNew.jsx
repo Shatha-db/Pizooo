@@ -61,6 +61,13 @@ const ExploreNew = () => {
     return t(key);
   };
 
+  const handleSeeAll = (sectionType) => {
+    // Navigate to filtered explore page or show all profiles of this type
+    console.log('See all for section:', sectionType);
+    // TODO: Implement navigation to filtered view
+    // For now, just refresh the current section
+  };
+
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-pink-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
