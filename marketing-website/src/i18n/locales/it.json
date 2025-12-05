@@ -1,0 +1,140 @@
+{
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "howItWorks": "How It Works",
+    "blog": "Blog",
+    "download": "Download",
+    "signIn": "Sign In",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "title": "Find Your Perfect Match",
+    "subtitle": "Join millions of people discovering meaningful connections on Pizoo",
+    "cta": "Start Your Journey",
+    "stats": {
+      "users": "10M+ Users",
+      "matches": "2M+ Matches",
+      "countries": "150+ Countries"
+    }
+  },
+  "features": {
+    "title": "Why Choose Pizoo?",
+    "subtitle": "Everything you need to find your perfect match",
+    "items": [
+      {
+        "title": "Smart Matching",
+        "description": "Our AI-powered algorithm finds compatible matches based on your preferences and interests"
+      },
+      {
+        "title": "Video Calls",
+        "description": "Connect face-to-face with high-quality video and audio calls"
+      },
+      {
+        "title": "Safe & Secure",
+        "description": "Verified profiles and advanced security features keep you protected"
+      },
+      {
+        "title": "Real-time Chat",
+        "description": "Instant messaging with photos, emojis, and voice messages"
+      },
+      {
+        "title": "Location Based",
+        "description": "Find people near you or explore matches from around the world"
+      },
+      {
+        "title": "24/7 Support",
+        "description": "Our team is always here to help with any questions or concerns"
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "How Pizoo Works",
+    "subtitle": "Finding love has never been easier",
+    "steps": [
+      {
+        "title": "Create Your Profile",
+        "description": "Sign up in seconds and add your best photos"
+      },
+      {
+        "title": "Discover Matches",
+        "description": "Browse profiles that match your preferences"
+      },
+      {
+        "title": "Start Chatting",
+        "description": "Connect with people you like and start conversations"
+      },
+      {
+        "title": "Meet in Person",
+        "description": "Take your connection offline and meet face-to-face"
+      }
+    ]
+  },
+  "success": {
+    "title": "Success Stories",
+    "subtitle": "Real couples who found love on Pizoo",
+    "readMore": "Read More Stories"
+  },
+  "statistics": {
+    "title": "Pizoo in Numbers",
+    "subtitle": "Join the fastest-growing dating community",
+    "items": [
+      {
+        "value": "10M+",
+        "label": "Active Users"
+      },
+      {
+        "value": "2M+",
+        "label": "Successful Matches"
+      },
+      {
+        "value": "150+",
+        "label": "Countries"
+      },
+      {
+        "value": "500K+",
+        "label": "Daily Conversations"
+      }
+    ]
+  },
+  "blog": {
+    "title": "Dating Tips & Advice",
+    "subtitle": "Expert advice to help you succeed in dating",
+    "readMore": "Read Article",
+    "allArticles": "View All Articles"
+  },
+  "download": {
+    "title": "Download Pizoo Today",
+    "subtitle": "Available on iOS and Android",
+    "appStore": "Download on the App Store",
+    "playStore": "Get it on Google Play"
+  },
+  "footer": {
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "careers": "Careers",
+      "press": "Press",
+      "blog": "Blog"
+    },
+    "support": {
+      "title": "Support",
+      "help": "Help Center",
+      "safety": "Safety Tips",
+      "contact": "Contact Us",
+      "faq": "FAQ"
+    },
+    "legal": {
+      "title": "Legal",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "cookies": "Cookie Policy",
+      "community": "Community Guidelines"
+    },
+    "social": {
+      "title": "Follow Us"
+    },
+    "copyright": "© 2024 Pizoo. All rights reserved.",
+    "description": "The #1 dating app in Switzerland. Meet new people, start amazing conversations, and find your life partner."
+  }
+}
