@@ -55,24 +55,28 @@ const Hero = () => {
           <div className="relative animate-slide-up">
             <div className="grid grid-cols-2 gap-4">
               <img
-                src="https://images.unsplash.com/photo-1546961329-78bef0414d7c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMGFkdWx0JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzY0OTI1ODc4fDA&ixlib=rb-4.1.0&q=85"
+                src="https://images.unsplash.com/photo-1546961329-78bef0414d7c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMGFkdWx0JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzY0OTI1ODc4fDA&ixlib=rb-4.1.0&q=85&w=400"
                 alt="Pizoo User 1"
                 className="rounded-2xl shadow-2xl w-full h-64 object-cover"
+                loading="lazy"
               />
               <img
-                src="https://images.unsplash.com/photo-1540222797359-e9b786124d4b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwyfHx5b3VuZyUyMGFkdWx0JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzY0OTI1ODc4fDA&ixlib=rb-4.1.0&q=85"
+                src="https://images.unsplash.com/photo-1540222797359-e9b786124d4b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwyfHx5b3VuZyUyMGFkdWx0JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzY0OTI1ODc4fDA&ixlib=rb-4.1.0&q=85&w=400"
                 alt="Pizoo User 2"
                 className="rounded-2xl shadow-2xl w-full h-64 object-cover mt-8"
+                loading="lazy"
               />
               <img
-                src="https://images.unsplash.com/photo-1606841216827-d1217fa5fe27?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwzfHx5b3VuZyUyMGFkdWx0JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzY0OTI1ODc4fDA&ixlib=rb-4.1.0&q=85"
+                src="https://images.unsplash.com/photo-1606841216827-d1217fa5fe27?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwzfHx5b3VuZyUyMGFkdWx0JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzY0OTI1ODc4fDA&ixlib=rb-4.1.0&q=85&w=400"
                 alt="Pizoo User 3"
                 className="rounded-2xl shadow-2xl w-full h-64 object-cover"
+                loading="lazy"
               />
               <img
-                src="https://images.unsplash.com/photo-1535295972055-1c762f4483e5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxzbWlsaW5nJTIwcGVyc29ufGVufDB8fHx8MTc2NDkyNTg4N3ww&ixlib=rb-4.1.0&q=85"
+                src="https://images.unsplash.com/photo-1535295972055-1c762f4483e5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxzbWlsaW5nJTIwcGVyc29ufGVufDB8fHx8MTc2NDkyNTg4N3ww&ixlib=rb-4.1.0&q=85&w=400"
                 alt="Pizoo User 4"
                 className="rounded-2xl shadow-2xl w-full h-64 object-cover mt-8"
+                loading="lazy"
               />
             </div>
           </div>
