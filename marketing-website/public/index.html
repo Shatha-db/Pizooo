@@ -8,7 +8,21 @@
   <meta name="description" content="Pizoo - التطبيق الأول للتعارف في سويسرا. تعرف على أشخاص جدد، ابدأ محادثات مميزة، واعثر على شريك حياتك." />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <title>Pizoo - Meet New People & Find Love</title>
+  
+  <!-- Deep Link Support -->
+  <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID" />
+  <link rel="alternate" href="pizoo://open/app" />
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  
+  <title>Pizoo - Find Your Person | Real Connections, Powered by AI</title>
 </head>
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
