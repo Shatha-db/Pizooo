@@ -6045,6 +6045,23 @@ async def admin_stats():
         raise HTTPException(status_code=500, detail="Failed to retrieve statistics")
 
 
+# ===== Marketing Website Download Endpoint =====
+@app.get("/download/marketing-website")
+async def download_marketing_website():
+    """
+    Download the marketing website build ZIP file
+    """
+    file_path = "/app/pizoo-website-build.zip"
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail="File not found")
+    
+    return FileResponse(
+        path=file_path,
+        media_type="application/zip",
+        filename="pizoo-website-build.zip"
+    )
+
+
 # Mount the API router
 app.include_router(api_router)
 
