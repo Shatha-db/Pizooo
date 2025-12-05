@@ -9,14 +9,22 @@
     "getStarted": "Get Started"
   },
   "hero": {
-    "title": "Find Your Perfect Match",
-    "subtitle": "Join millions of people discovering meaningful connections on Pizoo",
+    "title": "Find Your Person",
+    "subtitle": "Real connections, powered by AI. Not just a match — but someone who truly understands you.",
+    "tagline": "Where hearts meet technology",
     "cta": "Start Your Journey",
     "stats": {
       "users": "10M+ Users",
       "matches": "2M+ Matches",
       "countries": "150+ Countries"
     }
+  },
+  "whyPizoo": {
+    "title": "Why Pizoo?",
+    "subtitle": "Because finding love shouldn't feel like work",
+    "story": "In a world of endless swiping, Pizoo is different. We believe that everyone deserves to find someone who makes their heart skip a beat. Someone who gets their jokes, shares their dreams, and makes ordinary moments extraordinary.",
+    "mission": "Our mission is simple: help you find not just a date, but your person. The one who makes you feel at home.",
+    "cta": "Join Our Story"
   },
   "features": {
     "title": "Why Choose Pizoo?",
