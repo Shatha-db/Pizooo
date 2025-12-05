@@ -6046,7 +6046,7 @@ async def admin_stats():
 
 
 # ===== Marketing Website Download Endpoint =====
-@app.get("/download/marketing-website")
+@api_router.get("/download/marketing-website")
 async def download_marketing_website():
     """
     Download the marketing website build ZIP file
