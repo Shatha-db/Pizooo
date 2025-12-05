@@ -3,10 +3,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import WhyPizoo from './components/WhyPizoo';
 import Features from './components/Features';
 import HowItWorks from './components/HowItWorks';
+import Privacy from './components/Privacy';
 import SuccessStories from './components/SuccessStories';
 import Statistics from './components/Statistics';
+import Pricing from './components/Pricing';
 import Blog from './components/Blog';
 import Download from './components/Download';
 import Footer from './components/Footer';
@@ -17,10 +20,13 @@ function HomePage() {
   return (
     <>
       <Hero />
+      <WhyPizoo />
       <Features />
       <HowItWorks />
+      <Privacy />
       <SuccessStories />
       <Statistics />
+      <Pricing />
       <Blog />
       <Download />
     </>
