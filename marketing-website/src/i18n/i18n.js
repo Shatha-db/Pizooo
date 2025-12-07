@@ -29,6 +29,7 @@ i18n
       zh: { translation: zhTranslations },
       ja: { translation: jaTranslations },
     },
+    lng: 'en', // Set English as default language
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false
