@@ -52,6 +52,12 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/faq" element={<FAQPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/admin/blog" element={<AdminBlog />} />
         </Routes>
